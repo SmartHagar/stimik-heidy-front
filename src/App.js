@@ -1,8 +1,8 @@
 /** @format */
 
-import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import "animate.css";
 import Header from "./components/Header";
 import TopMenus from "./components/TopMenus";
 import Dashboard from "./pages/dashboard/Dashboard";
