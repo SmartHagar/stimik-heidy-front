@@ -1,5 +1,5 @@
 /** @format */
 
 export default function baseUrl() {
-  return "https://admin.heidy.spartasmart.my.id/api";
+  return "https://back.heidy.spartasmart.my.id/api";
 }
