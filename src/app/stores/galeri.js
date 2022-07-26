@@ -9,9 +9,19 @@ import axios from "axios";
 const useGallery = create(
   devtools((set) => ({
     galleries: [],
-    getGalleries: async () => {
-      const response = await axios.get(`${baseUrl()}/gallery`);
-      set({ galleries: response.data });
+    getGalleries: () => {
+      // const response = await axios.get(`${baseUrl()}/gallery`);
+      // set({ galleries: response.data });
+      axios({
+        method: "get",
+        url: `${baseUrl()}/gallery`,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }).then((response) => {
+        set({ galleries: response.data });
+      });
     },
   }))
 );

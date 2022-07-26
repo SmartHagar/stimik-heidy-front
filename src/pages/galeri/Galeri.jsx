@@ -1,28 +1,24 @@
 /** @format */
 
 import React, { useEffect, useState } from "react";
-import FsLightbox from "fslightbox-react";
 import useGallery from "../../app/stores/galeri";
+import { FaWindowClose } from "react-icons/fa";
+import "./style.css";
 
 const Galeri = () => {
   const { galleries, getGalleries } = useGallery((state) => state);
 
+  const [model, setModel] = useState(false);
+  const [tmpImg, setTmpImg] = useState(null);
+
+  const getImg = (image) => {
+    setTmpImg(image);
+    setModel(true);
+  };
+
   useEffect(() => {
     getGalleries();
-    console.log(galleries);
   }, []);
-
-  const [lightboxController, setLightboxController] = useState({
-    toggler: false,
-    sourceIndex: 0,
-  });
-
-  function openLightboxOnSource(sourceIndex) {
-    setLightboxController({
-      toggler: !lightboxController.toggler,
-      sourceIndex: sourceIndex,
-    });
-  }
 
   const showImages = () => {
     return galleries
@@ -31,31 +27,13 @@ const Galeri = () => {
           <img
             key={index}
             src={gallery.image}
-            className="w-60"
-            onClick={() => openLightboxOnSource(index)}
+            className="w-60 gallery__items"
+            alt="gallery"
+            onClick={() => getImg(gallery.image)}
           />
         );
       })
       .reverse();
-  };
-
-  const lightBox = () => {
-    return (
-      <FsLightbox
-        toggler={lightboxController.toggler}
-        sourceIndex={lightboxController.sourceIndex}
-        sources={galleries.map((gallery) => gallery.image)}
-        customControls={[
-          <button
-            key="close"
-            className="close"
-            onClick={() => setLightboxController({ toggler: false })}
-          >
-            &times;
-          </button>,
-        ]}
-      />
-    );
   };
 
   return (
@@ -64,8 +42,11 @@ const Galeri = () => {
         <h3 className="text-2xl text-center font-bold">Galeri</h3>
       </div>
       <div className="flex flex-wrap justify-center">
+        <div className={model ? "model open" : "model"}>
+          <img src={tmpImg} alt="" />
+          <FaWindowClose onClick={() => setModel(false)} />
+        </div>
         {showImages()}
-        {lightBox()}
       </div>
     </div>
   );
