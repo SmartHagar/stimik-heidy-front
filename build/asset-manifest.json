@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.bc6ed591.css",
-    "main.js": "/static/js/main.ec493532.js",
+    "main.js": "/static/js/main.c12757ba.js",
     "static/media/gereja.jpg": "/static/media/gereja.d775ea5850598183ca58.jpg",
     "index.html": "/index.html",
     "main.bc6ed591.css.map": "/static/css/main.bc6ed591.css.map",
-    "main.ec493532.js.map": "/static/js/main.ec493532.js.map"
+    "main.c12757ba.js.map": "/static/js/main.c12757ba.js.map"
   },
   "entrypoints": [
     "static/css/main.bc6ed591.css",
-    "static/js/main.ec493532.js"
+    "static/js/main.c12757ba.js"
   ]
 }
