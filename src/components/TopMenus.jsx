@@ -51,7 +51,7 @@ const TopMenus = () => {
           <NavLink to="aturan">Aturan Sewa</NavLink>
         </li>
         <li>
-          <a href="https://back.heidy.spartasmart.my.id" target="blank">
+          <a href="https://admin.heidy.smartspartacus.com" target="blank">
             Sewa
           </a>
         </li>
