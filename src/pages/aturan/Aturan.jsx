@@ -17,16 +17,7 @@ const Aturan = () => {
             <li>
               Harga sewa perhari adalah Rp. 12.000.000,- (duabelas juta rupiah)
             </li>
-            <li>
-              No. Rekening yang dapat digunakan untuk pembayaran sewa: <br />
-              <ul className="my-ul">
-                <li>
-                  <b>Bank Mandiri</b> <br />
-                  No. Rekening: <b>1540016698601</b> <br />
-                  Atas Nama: <b>Amelia</b>
-                </li>
-              </ul>
-            </li>
+     
           </ol>
         </div>
       </div>
